@@ -2,7 +2,7 @@
 @section('content')
 
 
-    <h1 class="text-center">Artists</h1>
+    <h1 class="text-center text-light mb-5">Artists</h1>
     <div class="container">
         <table class="table table-striped-columns table-dark">
             <thead>
