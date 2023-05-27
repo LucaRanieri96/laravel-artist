@@ -1,12 +1,9 @@
 @extends('layout.app')
 @section('content')
-    <h1 class="text-center text-light mb-5">Artists</h1>
+    <h1 class="text-center txt_shadow txt_shadow text-light mb-5">Concerti 2023</h1>
     <div class="container">
         <table class="table table-striped-columns table-dark">
 
-            <div class="text-light">
-                ciao
-            </div>
             <thead>
                 <tr>
                     <th scope="col">artista</th>

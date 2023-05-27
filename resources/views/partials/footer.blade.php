@@ -1,8 +1,8 @@
-<footer class="text-white py-5">
-    <div class="container">
-        <div class="row row-cols-1 row-cols-lg-3">
+<footer class="text-white ">
+    <div class="container pt-4">
+        <div class="row row-cols-1 row-cols-lg-4">
             <div class="col">
-                <h3>TicketOne</h3>
+                <h4>TicketOne</h4>
                 <ul class="list-unstyled">
                     <li><a href="">Termini e condizioni d’acquisto</a></li>
                     <li><a href="">Privacy</a></li>
@@ -14,7 +14,7 @@
             </div>
             <!-- /.col -->
             <div class="col">
-                <h3>Società</h3>
+                <h4>Società</h4>
                 <ul class="list-unstyled">
                     <li><a href="">Chi siamo</a></li>
                     <li><a href="">Eventim International</a></li>
@@ -26,7 +26,7 @@
             </div>
             <!-- /.col -->
             <div class="col">
-                <h3>Servizi</h3>
+                <h4>Servizi</h4>
                 <ul class="list-unstyled">
                     <li><a href="">Newsletter</a></li>
                     <li><a href="">Gift Voucher</a></li>
@@ -37,8 +37,22 @@
                 <!-- /.card -->
             </div>
             <!-- /.col -->
+            <div class="col d-flex align-items-center">
+                @foreach (config('footerInfo') as $icon)
+                    <div class="text-dark">
+                        <a class="text-dark mx-2" href="#">
+                            <img src="{{ Vite::asset('resources/img/' . $icon['icon']) }}" alt="{{ $icon['name'] }}">
+                        </a>
+
+                    </div>
+                @endforeach
+            </div>
+            <!-- /.col -->
         </div>
         <!-- /.row row-cols-1 row-cols-lg-3 -->
+    </div>
+    <div class="text-center py-3">
+        &#169; Copyright LESD
     </div>
     <!-- /.container -->
 </footer>

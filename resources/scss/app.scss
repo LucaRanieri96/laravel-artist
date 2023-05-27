@@ -1,19 +1,68 @@
 @import '~bootstrap/scss/bootstrap';
 
-.navbar{
-    background-color: #161616;
-    padding: 2rem 0rem;
-    .navbar-brand{
-        font-size: 30px;
-    }
-}
-main{
-    height: 72vh;
+//VARIABLES
+
+:root {
+    --al-carbon: #161616;
+    --al-snow: #f5f5f5;
+    --al-dirty-snow: #f5f5f5af;
 }
 
-footer{
-    background-color: #161616; 
-    a{
+//UTILITIES SELECTOR
+
+.txt_shadow {
+    text-shadow: 0 0 4px var(--al-carbon);
+}
+
+
+// HEADER SELECTOR
+
+.navbar {
+    background-color: var(--al-carbon);
+    padding: 2rem 0rem;
+    height: 100px;
+
+    .navbar-brand {
+        font-size: 30px;
+    }
+
+
+}
+
+// MAIN SELECTOR
+
+main {
+    min-height: calc(100vh - 100px);
+}
+
+.bg_image {
+    background-image: url(https://media.istockphoto.com/id/915747100/it/foto/microfono-sul-palco-su-uno-sfondo-di-auditorium.jpg?s=170667a&w=0&k=20&c=-FavuoaHB96DmeRasnKkUghugzbM0Xhzm-RHXNhEKZA=);
+    background-position: center;
+    background-size: cover;
+}
+
+.bg_transparent_dark {
+    background-color: rgba(0, 0, 0, 0.675);
+}
+
+.map_container {
+    height: 400px;
+}
+
+// FOOTER SELECTOR
+
+footer {
+    background-color: var(--al-carbon);
+
+    a {
         text-decoration: none;
+        font-size: 13px;
+        color: var(--al-dirty-snow);
+
+        &:hover {
+            color: var(--al-snow);
+            filter: brightness(50%);
+        }
+
     }
 }
