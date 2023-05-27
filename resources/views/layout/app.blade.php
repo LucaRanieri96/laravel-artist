@@ -17,7 +17,7 @@
 
 <body>
     @include('partials.header')
-    <main class="bg-dark py-5">
+    <main class="bg_image py-5">
         @yield('content')
     </main>
     @include('partials.footer')
