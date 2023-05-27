@@ -1,1 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
+
+.navbar{
+    background-color: #161616;
+    padding: 2rem 0rem;
+    .navbar-brand{
+        font-size: 30px;
+    }
+}
+main{
+    height: 72vh;
+}
+
+footer{
+    background-color: #161616; 
+    a{
+        text-decoration: none;
+    }
+}

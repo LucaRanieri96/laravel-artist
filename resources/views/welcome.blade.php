@@ -9,9 +9,9 @@
                 <tr>
                     <th scope="col">artista</th>
                     <th scope="col">nazionalita</th>
-                    <th scope="col">prossimo_concerto</th>
-                    <th scope="col">ultimo_album</th>
-                    <th scope="col">ultimo_singolo</th>
+                    <th scope="col">prossimo concerto</th>
+                    <th scope="col">ultimo album</th>
+                    <th scope="col">ultimo singolo</th>
                 </tr>
             </thead>
             <tbody>

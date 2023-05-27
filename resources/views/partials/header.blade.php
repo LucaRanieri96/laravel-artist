@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">Concerti 2023</a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleMainNav" aria-controls="collapsibleMainNav" aria-expanded="false" aria-label="Toggle navigation">
