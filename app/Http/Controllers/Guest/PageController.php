@@ -13,4 +13,12 @@ class PageController extends Controller
         $artists = Artist::get();
         return view('welcome', compact('artists'));
     }
+    public function about()
+    {
+        return view('about');
+    }
+    public function contacts()
+    {
+        return view('contacts');
+    }
 }
