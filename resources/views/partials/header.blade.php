@@ -8,7 +8,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleMainNav">
-                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                <ul class="navbar-nav ms-auto mt-2 mt-lg-0 bg_transparent_dark rounded-3 p-2">
                     <li class="nav-item">
                         <a class="nav-link {{ Route::currentRouteName() === 'welcome' ? 'bg-dark text-white' : '' }}"
                             href="{{ route('welcome') }}" aria-current="page">Home <span

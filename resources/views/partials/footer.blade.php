@@ -1,6 +1,6 @@
 <footer class="text-white ">
     <div class="container pt-4">
-        <div class="row row-cols-1 row-cols-lg-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
             <div class="col">
                 <h4>TicketOne</h4>
                 <ul class="list-unstyled">
@@ -37,7 +37,7 @@
                 <!-- /.card -->
             </div>
             <!-- /.col -->
-            <div class="col d-flex align-items-center">
+            <div class="col d-flex align-items-center py-3">
                 @foreach (config('footerInfo') as $icon)
                     <div class="text-dark">
                         <a class="text-dark mx-2" href="#">
