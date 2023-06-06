@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Guest\PageController;
+use App\Http\Controllers\Admin\ArtistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::resource('admin/artists', ArtistController::class);
 
 Route::get('/', [PageController::class, 'index'])->name('welcome');
 Route::get('/about', [PageController::class, 'about'])->name('about');
