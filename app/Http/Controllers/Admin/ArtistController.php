@@ -83,18 +83,18 @@ class ArtistController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(ArtistUpdateRequest $request, Artist $artist)
-    {
-        $data = [
-            'artista'=> $request->artista,
-            'nazionalita'=> $request->nazionalita,
-            'prossimo_concerto'=> $request->prossimo_concerto,
-            'ultimo_album'=> $request->ultimo_album,
-            'ultimo_singolo'=> $request->ultimo_singolo,
-        ];
-    
-        Artist::update($data);
-        return to_route('artists.index');
-    }
+{
+    $data = [
+        'artista' => $request->artista,
+        'nazionalita' => $request->nazionalita,
+        'prossimo_concerto' => $request->prossimo_concerto,
+        'ultimo_album' => $request->ultimo_album,
+        'ultimo_singolo' => $request->ultimo_singolo,
+    ];
+
+    $artist->update($data);
+    return redirect()->route('artists.index');
+}
 
     /**
      * Remove the specified resource from storage.
