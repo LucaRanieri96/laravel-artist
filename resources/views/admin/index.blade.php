@@ -25,9 +25,9 @@
                         <td>{{ $artist->ultimo_album }}</td>
                         <td>{{ $artist->ultimo_singolo }}</td>
                         <td>
-                            <a href="">Edit</a>
+                            <a href="{{ route('artists.edit', $artist->id) }}">Edit</a>
                             <a href="">Delete</a>
-                            <a href="">Show</a>
+                            <a href="{{ route('artists.show', $artist->id) }}">Show</a>
                         </td>
                     </tr>
                 @empty
