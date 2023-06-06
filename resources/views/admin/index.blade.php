@@ -5,7 +5,6 @@
     <div class="container">
         <a href="{{ route('artists.create') }}">Add a new Concert</a>
         <table class="table table-striped-columns table-dark">
-
             <thead>
                 <tr>
                     <th scope="col">artista</th>
@@ -25,11 +24,39 @@
                         <td>{{ $artist->ultimo_album }}</td>
                         <td>{{ $artist->ultimo_singolo }}</td>
                         <td>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
-                            <a href="">Show</a>
+                            <a href="{{ route('artists.edit', $artist->id) }}">Edit</a>
+                            <a href="{{ route('artists.show', $artist->id) }}">Show</a>
+                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                data-bs-target="#modal-{{ $artist->id }}">
+                                Delete
+                            </button>
                         </td>
                     </tr>
+                    <div class="modal fade" id="modal-{{ $artist->id }}" tabindex="-1" data-bs-backdrop="static"
+                        data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitle-{{ $artist->id }}"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitle-{{ $artist->id }}">Deleting artist:
+                                        "{{ $artist->artista }}"</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <form action="{{ route('artists.destroy', $artist->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Confirm</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @empty
                     <div class="col">
                         <p>Come back later!</p>
