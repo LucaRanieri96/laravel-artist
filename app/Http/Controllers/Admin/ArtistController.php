@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Artist;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\ArtistStoreRequest;
 use App\Http\Requests\ArtistUpdateRequest;
 
@@ -17,7 +18,8 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        
+        $artists = Artist::all();
+        return  view('admin.index', compact('artists'));
     }
 
     /**
@@ -27,7 +29,6 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        
     }
 
     /**
