@@ -29,6 +29,7 @@ class ArtistController extends Controller
      */
     public function create()
     {
+        return view("admin.create");
     }
 
     /**
@@ -39,7 +40,17 @@ class ArtistController extends Controller
      */
     public function store(ArtistStoreRequest $request)
     {
-        //
+        $data = [
+        'artista'=> $request->artista,
+        'nazionalita'=> $request->nazionalita,
+        'prossimo_concerto'=> $request->prossimo_concerto,
+        'ultimo_album'=> $request->ultimo_album,
+        'ultimo_singolo'=> $request->ultimo_singolo,
+    ];
+
+    Artist::create($data);
+    return to_route('artists.index');
+
     }
 
     /**

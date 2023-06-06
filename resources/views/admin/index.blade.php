@@ -3,6 +3,7 @@
 @section('content')
     <h1 class="text-center txt_shadow txt_shadow text-light mb-5">Concerti 2023</h1>
     <div class="container">
+        <a href="{{ route('artists.create') }}">Add a new Concert</a>
         <table class="table table-striped-columns table-dark">
 
             <thead>
@@ -12,6 +13,7 @@
                     <th scope="col">prossimo concerto</th>
                     <th scope="col">ultimo album</th>
                     <th scope="col">ultimo singolo</th>
+                    <th scope="col">actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +24,11 @@
                         <td>{{ $artist->prossimo_concerto }}</td>
                         <td>{{ $artist->ultimo_album }}</td>
                         <td>{{ $artist->ultimo_singolo }}</td>
+                        <td>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                            <a href="">Show</a>
+                        </td>
                     </tr>
                 @empty
                     <div class="col">
