@@ -13,7 +13,7 @@ class ArtistStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class ArtistStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'artista' => 'required',
+            'nazionalita' => 'required',
+            'prossimo_concerto' => 'nullable',
+            'ultimo_album'=> 'nullable',
+            'ultimo_singolo'=> 'nullable',
         ];
     }
 }

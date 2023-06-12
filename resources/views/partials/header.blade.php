@@ -7,6 +7,11 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div>
+                <a class="nav-link {{ Route::currentRouteName() === 'welcome' ? 'bg-dark' : '' }} text-danger mx-2"
+                                href="{{ route('artists.index') }}" aria-current="page">ADMIN<span
+                                    class="visually-hidden">(current)</span></a>
+            </div>
             <div class="collapse navbar-collapse" id="collapsibleMainNav">
                 <ul class="navbar-nav ms-auto mt-2 mt-lg-0 bg_transparent_dark rounded-3 p-2">
                     <li class="nav-item">
