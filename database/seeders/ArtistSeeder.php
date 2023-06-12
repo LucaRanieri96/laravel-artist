@@ -16,33 +16,17 @@ class ArtistSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i=0; $i < 10; $i++) { 
+        for ($i = 0; $i < 10; $i++) {
             $artist = new Artist();
 
-            $artist->artista = $faker->randomElement([
-            'Andrea Bocelli',
-            'Ed Sheeran',
-            'Laura Pausini',
-            'Tiziano Ferro',
-            'Tina Turner',
-            'Zucchero',
-            'Beatols',
-            'Giorgia',
-            'Ligabue',
-            'Negramaro',
-            'Bob Marley'
-            ]);
+            $artist->artista = $faker->randomElement(['Andrea Bocelli', 'Ed Sheeran', 'Laura Pausini', 'Tiziano Ferro', 'Tina Turner', 'Zucchero', 'Beatols', 'Giorgia', 'Ligabue', 'Negramaro', 'Bob Marley']);
 
-            $artist->nazionalita = $faker->randomElement([
-                'Italiana',
-                'Irlandese',
-                'Giamaicana',
-            ]);
+            $artist->nazionalita = $faker->randomElement(['Italiana', 'Irlandese', 'Giamaicana']);
 
             $artist->prossimo_concerto = $faker->date();
 
             $artist->ultimo_album = $faker->word();
-            
+
             $artist->ultimo_singolo = $faker->word();
 
             $artist->save();

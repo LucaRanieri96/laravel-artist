@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Guest\PageController;
-use App\Http\Controllers\Admin\ArtistController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Guest\PageController;
+use App\Http\Controllers\Admin\LabelController;
+use App\Http\Controllers\Admin\ArtistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('admin/artists', ArtistController::class);
+Route::resource('admin/label', LabelController::class);
 
 Route::get('/', [PageController::class, 'index'])->name('welcome');
 Route::get('/about', [PageController::class, 'about'])->name('about');
