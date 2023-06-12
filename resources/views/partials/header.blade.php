@@ -27,6 +27,10 @@
                         <a class="nav-link {{ Route::currentRouteName() === 'contacts' ? 'bg-dark text-white' : '' }}"
                             href="{{ route('contacts') }}">Contacts</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::currentRouteName() === 'label' ? 'bg-dark text-white' : '' }}"
+                            href="{{ route('label.index') }}">Label</a>
+                    </li>
 
                 </ul>
 

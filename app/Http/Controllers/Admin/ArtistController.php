@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Label;
 use App\Models\Artist;
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ArtistStoreRequest;
 use App\Http\Requests\ArtistUpdateRequest;
@@ -18,8 +19,12 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        $artists = Artist::all();
-        return  view('admin.index', compact('artists'));
+        $artists = Artist::with('label')
+            ->orderByDesc('id')
+            ->get();
+        $labels = Label::orderByDesc('id')->get();
+
+        return view('admin.index', compact('artists', 'labels'));
     }
 
     /**
@@ -29,7 +34,9 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        return view("admin.create");
+        $labels = Label::orderByDesc('id')->get();
+
+        return view('admin.create', compact('labels'));
     }
 
     /**
@@ -41,16 +48,16 @@ class ArtistController extends Controller
     public function store(ArtistStoreRequest $request)
     {
         $data = [
-        'artista'=> $request->artista,
-        'nazionalita'=> $request->nazionalita,
-        'prossimo_concerto'=> $request->prossimo_concerto,
-        'ultimo_album'=> $request->ultimo_album,
-        'ultimo_singolo'=> $request->ultimo_singolo,
-    ];
+            'artista' => $request->artista,
+            'nazionalita' => $request->nazionalita,
+            'prossimo_concerto' => $request->prossimo_concerto,
+            'ultimo_album' => $request->ultimo_album,
+            'ultimo_singolo' => $request->ultimo_singolo,
+            'label_id' => $request->label_id,
+        ];
 
-    Artist::create($data);
-    return to_route('artists.index');
-
+        Artist::create($data);
+        return to_route('artists.index');
     }
 
     /**
@@ -61,7 +68,7 @@ class ArtistController extends Controller
      */
     public function show(Artist $artist)
     {
-        return view("admin.show", compact("artist"));
+        return view('admin.show', compact('artist'));
     }
 
     /**
@@ -72,7 +79,8 @@ class ArtistController extends Controller
      */
     public function edit(Artist $artist)
     {
-        return view("admin.edit", compact("artist"));
+        $labels = Label::orderByDesc('id')->get();
+        return view('admin.edit', compact('artist', 'labels'));
     }
 
     /**
@@ -83,18 +91,19 @@ class ArtistController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(ArtistUpdateRequest $request, Artist $artist)
-{
-    $data = [
-        'artista' => $request->artista,
-        'nazionalita' => $request->nazionalita,
-        'prossimo_concerto' => $request->prossimo_concerto,
-        'ultimo_album' => $request->ultimo_album,
-        'ultimo_singolo' => $request->ultimo_singolo,
-    ];
+    {
+        $data = [
+            'artista' => $request->artista,
+            'nazionalita' => $request->nazionalita,
+            'prossimo_concerto' => $request->prossimo_concerto,
+            'ultimo_album' => $request->ultimo_album,
+            'ultimo_singolo' => $request->ultimo_singolo,
+            'label_id' => $request->label_id,
+        ];
 
-    $artist->update($data);
-    return redirect()->route('artists.index');
-}
+        $artist->update($data);
+        return redirect()->route('artists.index');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -105,7 +114,9 @@ class ArtistController extends Controller
     public function destroy(Artist $artist)
     {
         $artist->delete();
-        
-        return redirect()->route('artists.index')->with("message", "Artist deleted");
+
+        return redirect()
+            ->route('artists.index')
+            ->with('message', 'Artist deleted');
     }
 }

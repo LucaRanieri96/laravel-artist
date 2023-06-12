@@ -12,6 +12,7 @@
                     <th scope="col">prossimo concerto</th>
                     <th scope="col">ultimo album</th>
                     <th scope="col">ultimo singolo</th>
+                    <th scope="col">Label</th>
                     <th scope="col">actions</th>
                 </tr>
             </thead>
@@ -23,6 +24,7 @@
                         <td>{{ $artist->prossimo_concerto }}</td>
                         <td>{{ $artist->ultimo_album }}</td>
                         <td>{{ $artist->ultimo_singolo }}</td>
+                        <td><span class="badge bg-primary">{{ $artist->label->name ?? 'No Label' }}</span></td>
                         <td>
                             <a class="btn btn-info my-1" href="{{ route('artists.edit', $artist->id) }}">
                                 
