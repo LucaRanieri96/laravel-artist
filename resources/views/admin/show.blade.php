@@ -36,6 +36,10 @@
                 <br>
                 <span class="fw-normal">{{ $artist->ultimo_singolo }}</span>
             </h4>
+            <h4>Lable:
+                <br>
+                <span class="badge bg-primary">{{ $artist->label?->name }}</span>
+            </h4>
         </div>
     </div>
 
