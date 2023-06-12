@@ -77,6 +77,19 @@
 
             </div>
 
+            <div class="mb-3">
+                <label for="label_id" class="form-label">Labels</label>
+                <select class="form-select" name="label_id" id="label_id">
+                    <option value="">Select a new label</option>
+                    @foreach ($labels as $label)
+                        <option value="{{ $label?->id }}"
+                            {{ $label?->id == old('label_id', $artist->label?->id) ? 'selected' : '' }}>{{ $label?->name }}
+                        </option>
+                    @endforeach
+                </select>
+
+            </div>
+
             <button type="submit" class="btn btn-primary">Edit project</button>
             <button type="reset" class="btn btn-danger">Reset fields</button>
         </form>
