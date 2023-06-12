@@ -102,9 +102,10 @@ class ArtistController extends Controller
      * @param \App\Models\Artist $artist
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project)
+    public function destroy(Artist $artist)
     {
-        $project->delete();
-        return redirect()->route('artists.index')->with("message", "Project deleted");
+        $artist->delete();
+        
+        return redirect()->route('artists.index')->with("message", "Artist deleted");
     }
 }
