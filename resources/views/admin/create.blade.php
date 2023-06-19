@@ -39,8 +39,7 @@
 
             <div class="mb-3">
                 <label for="description" class="form-label">description</label>
-                <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror"
-                    value="{{ old('description') }}" placeholder="Artista description"></textarea>
+                <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" placeholder="Artista description" cols="30" rows="8">{{ old('description')}}</textarea>
 
                 @error('description')
                     <small class="text-danger">Please, fill the field correctly</small>
