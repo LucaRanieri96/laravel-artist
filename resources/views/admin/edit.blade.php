@@ -41,6 +41,29 @@
             </div>
 
             <div class="mb-3">
+                <label for="description" class="form-label">description</label>
+                <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror"
+                    value="{{ old('description') }}" placeholder="Artista description"></textarea>
+
+                @error('description')
+                    <small class="text-danger">Please, fill the field correctly</small>
+                @enderror
+
+            </div>
+
+            <div class="mb-3">
+                <label for="img_url" class="form-label">Immagine</label>
+                <input type="text" name="img_url" id="img_url"
+                    class="form-control @error('img_url') is-invalid @enderror" value="{{ old('img_url', $artist->img_url) }}"
+                    placeholder="Artista img_url">
+
+                @error('img_url')
+                    <small class="text-danger">Please, fill the field correctly</small>
+                @enderror
+
+            </div>
+
+            <div class="mb-3">
                 <label for="prossimo_concerto" class="form-label">prossimo_concerto</label>
                 <input type="date" name="prossimo_concerto" id="prossimo_concerto"
                     class="form-control @error('prossimo_concerto') is-invalid @enderror"

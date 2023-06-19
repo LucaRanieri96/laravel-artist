@@ -3,7 +3,7 @@
 @section('content')
     <h1 class="text-center txt_shadow txt_shadow text-light mb-5">Concerti 2023</h1>
     <div class="container">
-        <a class="btn btn-primary mb-4" href="{{ route('artists.create') }}">Add a new Concert</a>
+        <a class="btn btn-primary mb-4" href="{{ route('artists.create') }}">Add a new Artist</a>
         <table class="table table-striped-columns table-dark">
             <thead>
                 <tr>

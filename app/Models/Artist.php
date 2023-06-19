@@ -11,7 +11,7 @@ class Artist extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['artista', 'nazionalita', 'prossimo_concerto', 'ultimo_album', 'ultimo_singolo', 'label_id'];
+    protected $fillable = ['artista', 'nazionalita', 'prossimo_concerto', 'ultimo_album', 'ultimo_singolo', 'label_id', 'description', 'img_url'];
 
     public function label(): BelongsTo
     {
