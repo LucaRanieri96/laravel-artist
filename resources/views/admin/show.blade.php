@@ -9,7 +9,7 @@
 <div class="container">
     <div class="card overflow-hidden">
         <div class="card-header bg-primary text-light">
-            <h2 class="mb-0">Artist resume</h2>
+            <img src="{{ $artist->img_url }}" alt="ciao">
         </div>
         <div class="card-body bg-dark text-light">
             <h4>Artist name:
@@ -20,6 +20,12 @@
             <h4>Nationality:
                 <br>
                 <span class="fw-normal">{{ $artist->nazionalita }}</span>
+            </h4>
+
+
+            <h4>Description:
+                <br>
+                <span class="fw-normal">{{ $artist->description }}</span>
             </h4>
 
             <h4>Next Concert:

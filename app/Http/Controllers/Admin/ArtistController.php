@@ -50,6 +50,8 @@ class ArtistController extends Controller
         $data = [
             'artista' => $request->artista,
             'nazionalita' => $request->nazionalita,
+            'description' => $request->description,
+            'img_url' => $request->img_url,
             'prossimo_concerto' => $request->prossimo_concerto,
             'ultimo_album' => $request->ultimo_album,
             'ultimo_singolo' => $request->ultimo_singolo,
@@ -95,6 +97,8 @@ class ArtistController extends Controller
         $data = [
             'artista' => $request->artista,
             'nazionalita' => $request->nazionalita,
+            'description' => $request->description,
+            'img_url' => $request->img_url,
             'prossimo_concerto' => $request->prossimo_concerto,
             'ultimo_album' => $request->ultimo_album,
             'ultimo_singolo' => $request->ultimo_singolo,
